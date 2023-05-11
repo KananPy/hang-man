@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+
+body,
+html {
+    min-height: 100%;
+
+}
+
+body {
+    background-image: url("/assets/img/board.jpg") ;
+    background-size: 110% 115%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+
+
+
+
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+
+}
+
+h1 {
+    font-size: 60px;
+    color: white;
+    font-family: 'Patrick Hand', cursive;
+
+}
+
+#button {
+    display: flex;
+    justify-content: center;
+    margin-top: 6%;
+}
+
+.button {
+    background-color: transparent;
+    border: none;
+    cursor:pointer;
+}
+
+ p{
+    color: white;
+    font-size: 60px;
+    font-family: 'Patrick Hand', cursive;
+}
+
+.hangman {
+    display: flex;
+    justify-content: center;
+}
