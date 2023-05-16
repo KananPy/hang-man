@@ -55,6 +55,13 @@ h1 {
     font-family: 'Patrick Hand', cursive;
 }
 
+.littleP {
+    color: white;
+    font-size: 40px;
+    font-family: 'Patrick Hand', cursive;
+    margin-right: 5%;
+}
+
 .hangman {
     display: flex;
     justify-content: center;
@@ -64,4 +71,22 @@ h1 {
     display: flex;
     justify-content: space-between;
     margin: 5%;
+}
+
+.inputArea {
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+    margin-right: 20%;
+}
+
+.letters {
+    margin-left: 10px;
+    letter-spacing: 15px;
+    font-size: 34px;
+    color: whitesmoke;
+    font-weight: bolder;
+    outline: none;
+    border: none;
+    background-color: transparent;
 }
