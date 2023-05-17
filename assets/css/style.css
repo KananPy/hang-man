@@ -49,6 +49,12 @@ h1 {
     cursor:pointer;
 }
 
+.button2 {
+    background-color: transparent;
+    border: none;
+    cursor:pointer;
+}
+
  p{
     color: white;
     font-size: 60px;
@@ -90,3 +96,9 @@ h1 {
     border: none;
     background-color: transparent;
 }
+
+.lifeleft{
+    text-align: center;
+    margin-top: 7%;
+}
+

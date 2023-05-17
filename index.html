@@ -39,7 +39,27 @@
             <input type="text" class="letters" disabled>
         </div>
 
+        <div class="lifeleft">
+            <p style="font-size: medium;">Life:  <span class="life"></span></p>
+        </div>
+
+
+
     </section>
+
+    <section class="section3" style="display: none;">
+        <div style="text-align: center; margin-top: 5%;">
+            <p>You have lost</p>
+            <p style="margin-top: 3%;">Your score: <span class="finalResult">0</span></p>
+        </div>
+        <div id="button">
+            <button class="button2"><p>Try again</p></button>
+        </div>
+    </section>
+
+
+    <audio id="marioRunning" src="./assets/music/01 Running About.mp3" style="visibility: hidden;"></audio>
+    <audio id="marioLost" src="./assets/music/08 Miss.mp3" style="visibility: hidden;"></audio>
 
 
     <script src="./assets/js/game.js"></script>

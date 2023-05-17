@@ -1,10 +1,17 @@
 class HangMan {
     constructor() {
         this.playBtn = document.querySelector(".button")
+        this.tryAgain = document.querySelector(".button2")
         this.section1 = document.querySelector(".section1")
         this.section2 = document.querySelector(".section2")
+        this.section3 = document.querySelector(".section3")
         this.score = document.querySelector("#myScore")
+        this.finalScore = document.querySelector(".finalResult")
         this.input = document.querySelector('.letters')
+        this.life = document.querySelector('.life')
+        this.music1 = document.querySelector('#marioRunning')
+        this.music2 = document.querySelector('#marioLost')
+
 
 
         this.count = 0
@@ -78,18 +85,16 @@ class HangMan {
             'Zangilan'
         ]
 
+
         this.playBtn.addEventListener("click", this.changePage.bind(this))
+        this.tryAgain.addEventListener("click", this.Again.bind(this))
 
 
 
 
-    }
 
-    move() {
-        if (e.keyCode >= 65 && e.keyCode <= 90) {
-            var letter = e.key
-            console.log(letter);
-        }
+
+
     }
 
 
@@ -102,8 +107,13 @@ class HangMan {
         page2.style.display = "block"
 
         this.getRandomValue()
+        this.playMusic1()
         // this.input.value = inputUnderscore
 
+    }
+
+    Again(){
+        window.location.reload()
     }
 
     // Input area
@@ -145,33 +155,41 @@ class HangMan {
         // console.log(lowerRandom);
         let lower = lowerRandom.split('')
 
+
+
         let result = lower.every((element) => {
             return element != letter
         })
 
         if(result){
-            this.count +=1
-            console.log(this.count);
+            this.wrongLetter -= 1
+            this.life.textContent = this.wrongLetter
+            console.log('wrong', this.wrongLetter);
+            if(this.wrongLetter ===0){
+                this.endGame()
+            }
         }
 
 
         for( let i = 0; i < lower.length; i++){
 
-            
+
 
             if(letter === lower[i]){
                 underscore[i] = lower[i]
                 let capital =  typeof underscore[0] === 'string' ? underscore[0].toUpperCase() : '';
                 underscore.splice(0, 1, capital)
-                
-                
-                // let HangManIndex = this.wrongLetter - this.count
-                // console.log('count', HangManIndex);
-        }
-        else{
-            // console.log('herf', lower[i]);
-            // console.log('key', letter);
-            
+                let completWord = underscore.every((element) => {
+                    return element != "_"
+                })
+                if(completWord){
+                    this.count += 1
+                    this.score.textContent = this.count
+                    this.finalScore.textContent = this.count
+                    window.removeEventListener("keyup", this.keyBoard);
+                    this.getRandomValue();
+                    break
+                }
 
         }
 
@@ -188,6 +206,28 @@ class HangMan {
         // this.getRandomValue()
 
 
+    }
+
+    endGame() {
+        this.pauseMusic()
+        this.playMusic2()
+        this.section3.style.display = "block";
+        this.section2.style.display = "none";
+        this.finalScore.textContent = this.count;
+
+
+    }
+
+    playMusic1(){
+        this.music1.play()
+    }
+
+    playMusic2(){
+        this.music2.play()
+    }
+
+    pauseMusic(){
+        this.music1.pause()
     }
 
 
