@@ -145,15 +145,34 @@ class HangMan {
         // console.log(lowerRandom);
         let lower = lowerRandom.split('')
 
+        let result = lower.every((element) => {
+            return element != letter
+        })
+
+        if(result){
+            this.count +=1
+            console.log(this.count);
+        }
+
+
         for( let i = 0; i < lower.length; i++){
+
+            
 
             if(letter === lower[i]){
                 underscore[i] = lower[i]
                 let capital =  typeof underscore[0] === 'string' ? underscore[0].toUpperCase() : '';
                 underscore.splice(0, 1, capital)
+                
+                
                 // let HangManIndex = this.wrongLetter - this.count
                 // console.log('count', HangManIndex);
-                console.log(i);
+        }
+        else{
+            // console.log('herf', lower[i]);
+            // console.log('key', letter);
+            
+
         }
 
 
